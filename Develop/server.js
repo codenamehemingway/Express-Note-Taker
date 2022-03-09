@@ -43,9 +43,9 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 app.delete("/api/notes/:id", (req, res) => {
-  let noteIndex = dbJson.findIndex((note) => note.id == req.params.id); //find the index of a note of it has an id equal to the passed in id
+  let noteIndex = dbJson.findIndex((note) => note.id == req.params.id);
   if (noteIndex) {
-    dbJson.splice(noteIndex, 1); //then take out that one note starting at that index position
+    dbJson.splice(noteIndex, 1);
     fs.writeFile("./db/db.json", JSON.stringify(dbJson), (err, data) => {
       if (err) {
         console.log("Data is : " + data);
