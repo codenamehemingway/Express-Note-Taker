@@ -4,8 +4,9 @@ const express = require("express");
 const path = require("path");
 const { v1: uuidv1 } = require("uuid");
 
-const app = express();
 const PORT = process.env.PORT || 3001;
+const app = express();
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -37,7 +38,7 @@ app.post("/api/notes", (req, res) => {
     JSON.stringify(parseNotes),
     "utf-8"
   );
-  res.json("Note Added!!!");
+  res.json("You have added a note!");
 });
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));

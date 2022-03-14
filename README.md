@@ -13,7 +13,8 @@ This is a great note taking app created using Express.js, Node, npm, and Heroku.
 
 ## Usage
 
-to use, just download the repo, open a terminal in the folder and run 'npm install' to obtain dependancies. then run the index.html file. Or go to https://codenamehemingway.github.io/Express-Note-Taker/
+to use, just download the repo, Use the terminal to initiate the program by using the command line and go to the local host port. Using the app is a snap:
+click the pencil to write a new note, click the floppy disk to save the note
 
 ## Licenses
 

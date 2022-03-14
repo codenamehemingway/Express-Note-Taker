@@ -4,17 +4,6 @@ const $saveNoteBtn = $(".save-note");
 const $newNoteBtn = $(".new-note");
 const $noteList = $(".list-container .list-group");
 
-// Show an element
-const show = (elem) => {
-  elem.style.display = "inline";
-};
-
-// Hide an element
-const hide = (elem) => {
-  elem.style.display = "none";
-};
-
-// activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
 const getNotes = () => {
@@ -67,9 +56,7 @@ const handleNoteSave = function () {
   });
 };
 
-// Delete the clicked note
 const handleNoteDelete = function (event) {
-  // Prevents the click listener for the list from being called when the button inside of it is clicked
   event.stopPropagation();
 
   const note = $(this).parent(".list-group-item").data();
@@ -84,13 +71,11 @@ const handleNoteDelete = function (event) {
   });
 };
 
-// Sets the activeNote and displays it
 const handleNoteView = function () {
   activeNote = $(this).data();
   renderActiveNote();
 };
 
-// Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = function () {
   activeNote = {};
   renderActiveNote();
@@ -104,8 +89,6 @@ const handleRenderSaveBtn = function () {
   }
 };
 
-// Render the list of note titles
-// Returns HTML element with or without a delete button
 const renderNoteList = (notes) => {
   $noteList.empty();
 
@@ -136,7 +119,6 @@ const renderNoteList = (notes) => {
 
   $noteList.append(noteListItems);
 };
-// Gets notes from the db and renders them to the sidebar
 
 const getAndRenderNotes = () => {
   return getNotes().then(renderNoteList);
